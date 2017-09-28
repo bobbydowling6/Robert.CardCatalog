@@ -6,6 +6,7 @@ namespace Robert.CardCatalog
     {
         public static void Main(string[] args)
         {
+            //Hi Robert!
             Console.WriteLine("Hello World!");
         }
     }
