@@ -1,9 +1,9 @@
 ﻿using System;
 namespace Robert.CardCatalog
 {
-    public class CardCatalog_class
+    public class CardCatalog
     {
-        public CardCatalog_class()
+        public CardCatalog()
         {
         }
     }
