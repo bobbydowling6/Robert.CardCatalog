@@ -22,9 +22,16 @@ namespace Robert.CardCatalog
         }
 
         //TODO: Correct return type and parameters
-        public void AddBook()
+        public void AddBook(string title, string author, string genre)
         {
+            Book newBook = new Book
+            {
+                Title = title,
+                Author = author,
+                Genre = genre
+            };
 
+            books.Add(newBook);
         }
 
         //TODO: Correct return type and parameters
