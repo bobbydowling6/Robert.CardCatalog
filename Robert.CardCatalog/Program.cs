@@ -9,22 +9,44 @@ namespace Robert.CardCatalog
             Console.WriteLine("Enter the name of a file");
             string fileName = Console.ReadLine();
             CardCatalog cc = new CardCatalog(fileName);
-            string title = null;
-            while (title != "")
+            string choice = "";
+
+            //TODO: work on the Menu
+            do
             {
-                Console.WriteLine("Enter the title of a Book");
-                title = Console.ReadLine();
+                Console.WriteLine("1. List All books");
+                Console.WriteLine("2. Add A Book");
+                Console.WriteLine("3. Save and Exit");
+                choice = Console.ReadLine();
 
-                Console.WriteLine("Enter the author of a Book");
-                string author = Console.ReadLine();
+                switch(choice)
+                {
+                    case "1":
 
-                Console.WriteLine("Enter the genre of a Book");
-                string genre = Console.ReadLine();
+                        cc.ListBooks();
+                        break;
+                    case "2":
+                        {
+							Console.WriteLine("Enter the title of a Book");
+							string title = Console.ReadLine();
 
-                cc.AddBook(title, author, genre);
-            }
+							Console.WriteLine("Enter the author of a Book");
+							string author = Console.ReadLine();
 
-            Console.ReadLine();
+							Console.WriteLine("Enter the genre of a Book");
+							string genre = Console.ReadLine();
+
+							cc.AddBook(title, author, genre);
+                            break;
+                        }
+                    case "3":
+                        cc.Save();
+                        break;
+                }
+
+            } while (choice != "3");
+            return;
+
         }
     }
 }
