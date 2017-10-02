@@ -76,10 +76,11 @@ namespace Robert.CardCatalog
         //TODO: Correct return type and parameters
         public void Save()
         {
-            FileStream fs = new FileStream(_fileName, FileMode.Create);
+            FileStream fs = new FileStream(_fileName, FileMode.Create, FileAccess.Write);
 
 			// Construct a BinaryFormatter and use it to serialize the data to the stream.
 			BinaryFormatter formatter = new BinaryFormatter();
+
 			try
 			{
                 formatter.Serialize(fs, books);
@@ -92,6 +93,7 @@ namespace Robert.CardCatalog
 			finally
 			{
 				fs.Close();
+                fs.Dispose();
 			}
         }
 
