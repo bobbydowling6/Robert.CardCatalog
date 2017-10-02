@@ -18,6 +18,10 @@ namespace Robert.CardCatalog
         //TODO: Correct return type and parameters
         public void ListBooks()
         {
+            foreach(var b in books)
+            {
+                Console.WriteLine(b.Title);
+            }
 
         }
 
